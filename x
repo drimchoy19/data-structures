@@ -1,0 +1,32 @@
+[33mcommit 9c440abe534304ee52c9806ca79a7a843816ef84[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Drim <drimchoy@gmail.com>
+Date:   Wed Oct 24 02:47:12 2018 +0300
+
+    Add Queue and Stack 1
+    
+    `Please enter the commit message for your changes. Lines starting
+
+[33mcommit 071ae5c8ea84cbe3f70a10706a5cd08ff4cb2c3f[m
+Author: Drim <drimchoy@gmail.com>
+Date:   Wed Oct 24 02:44:57 2018 +0300
+
+    Commit2
+
+[33mcommit 3d1651a342bf3ac2d56cbba36e07d3d7ce0e4600[m
+Merge: ea370c3 c820d3b
+Author: Drim <drimchoy@gmail.com>
+Date:   Wed Oct 24 02:42:54 2018 +0300
+
+    Merge branch 'master' of https://github.com/drimchoy19/data-structures
+
+[33mcommit c820d3bf8043bfac413c424dabe108d854a62f9f[m
+Author: drimchoy19 <drimchoy@gmail.com>
+Date:   Mon Oct 22 03:19:35 2018 +0300
+
+    Initial commit
+
+[33mcommit ea370c3a658eacf26c8ade768800298cbdafa0c5[m
+Author: Drim <drimchoy@gmail.com>
+Date:   Mon Oct 22 03:05:30 2018 +0300
+
+    Start
