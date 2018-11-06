@@ -51,6 +51,14 @@ public class Person {
 		
 	}
 	
+	@Override
+	public String toString() {
+		
+		String str = "Name:"+this.name+" Age:"+this.age+" ID:"+this.id;
+		
+		return str;
+	}
+	
 	
 	
 	
