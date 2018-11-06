@@ -2,7 +2,7 @@
 public class Queue{
 	
 	Node head;
-	int count;
+	private int count;
 	
 	public Queue() {
 		

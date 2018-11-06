@@ -3,12 +3,11 @@ public class Testing {
 
 	public static void main(String [] args) {
 		
-		System.out.println("Hello");
 		Person[] p = new Person[7];
 		p[0] = new Person("Gosho",22);
 		p[1] = new Person("Ivan",23);
-		p[2] = new Person("Gosho",24);
-		p[3] = new Person("Ivan",43);
+		p[2] = new Person("Gosho1",24);
+		p[3] = new Person("Ivan1",43);
 		p[4] = new Person("Petkan",33);
 		p[5] = new Person("Shestkan",26);
 		p[6] = new Person("Sedemkan",27);
@@ -39,7 +38,20 @@ public class Testing {
 		System.out.println(q.size());
 		while(q.isEmpty()!=true) {
 			
-			System.out.println(q.deqeue().getId());
+			System.out.println(q.deqeue().toString());
+			
+		}
+		System.out.println(q.size());
+		System.out.println("Stack");
+		Stack s = new Stack();
+		s.push(p[0]);
+		s.push(p[1]);
+		s.push(p[2]);
+		System.out.println(s.size());
+		while(s.isEmpty()!=true) {
+			
+			//System.out.println(s.peek().toString());
+			System.out.println(s.pop().toString());
 			
 		}
 		
