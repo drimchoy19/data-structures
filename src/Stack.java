@@ -1,13 +1,26 @@
 
 public class Stack {
 	
-	Node head;
+	private Node head;
 	private int count;
 	
 	public Stack() {
 		
 		this.head = null;
 		this.count = 0;
+		
+	}
+	
+	public Stack (Person[] arr) {
+		//!
+		Stack s = new Stack();
+		for(int i=0;i<arr.length;i++) {
+			
+			s.push(arr[i]);
+			
+		}
+		this.head = s.head;
+		this.count = s.count;
 		
 	}
 	

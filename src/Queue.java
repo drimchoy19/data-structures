@@ -1,7 +1,7 @@
 
 public class Queue{
 	
-	Node head;
+	private Node head;
 	private int count;
 	
 	public Queue() {

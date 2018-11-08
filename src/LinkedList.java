@@ -4,7 +4,7 @@ public class LinkedList {
 	private int count;
 	private Node head;
 
-	//getFirst,getLast,removeFirst,removeByIndex
+	//removeByIndex
 	public LinkedList() {
 
 		this.count = 0;
@@ -72,6 +72,32 @@ public class LinkedList {
 		count--;
 		return curr.getData();
 	}
+	}
+	
+	public Person getFirst() {
+		
+		return head.getData();
+		
+	}
+	
+	public Person getLast() {
+		
+		Node tmp = head;
+		while(tmp.getNext()!=null) {
+			
+			tmp = tmp.getNext();
+			
+		}
+		return tmp.getData();
+	}
+	
+	public Person removeFirst() {
+		
+		Person tmp = head.getData();
+		head = head.getNext();
+		count--;
+		return tmp;
+		
 	}
 	
 	public int size() {
