@@ -1,39 +1,51 @@
 
-public class LinkedList {
+public class LinkedList<T> {
 
 	private int count;
-	private Node head;
+	private Node<T> head;
 
-	//removeByIndex
+	//removeByIndex,toArray
 	public LinkedList() {
 
 		this.count = 0;
 		this.head = null;
 
 	}
+	
+	public LinkedList(T[] arr) {
+		LinkedList<T> ll = new LinkedList<T>();
+		
+		for(int i=0;i<arr.length;i++) {
+			
+			ll.add(arr[i]);
+			
+		}
+		this.head = ll.head;
+		this.count = ll.count;
+	}
 
-	public void add(Person data) {
+	public void add(T data) {
 
 		if (count == 0) {
 
-			head = new Node(data);
+			head = new Node<T>(data);
 			count = 1;
 
 		} else {
 
-			Node tmp = head;
+			Node <T> tmp = head;
 			while (tmp.getNext() != null) {
 
 				tmp = tmp.getNext();
 
 			}
-			tmp.setNext(new Node(data));
+			tmp.setNext(new Node<T>(data));
 			count++;
 		}
 
 	}
 
-	public Person get(int index) {
+	public T get(int index) {
 
 		if (index > count) {
 
@@ -44,7 +56,7 @@ public class LinkedList {
 			return head.getData();
 
 		} else {
-			Node tmp = head;
+			Node<T> tmp = head;
 			for (int i = 1; i < index; i++) {
 
 				tmp = tmp.getNext();
@@ -55,9 +67,9 @@ public class LinkedList {
 
 	}
 	
-	public Person removeLast() {
+	public T removeLast() {
 		
-		Node tmp = head;
+		Node<T> tmp = head;
 		if(count==1) {
 			head = null;
 			return tmp.getData();
@@ -67,22 +79,22 @@ public class LinkedList {
 			tmp = tmp.getNext();
 			
 		}
-		Node curr = tmp.getNext();
+		Node<T> curr = tmp.getNext();
 		tmp.setNext(null);;
 		count--;
 		return curr.getData();
 	}
 	}
 	
-	public Person getFirst() {
+	public T getFirst() {
 		
 		return head.getData();
 		
 	}
 	
-	public Person getLast() {
+	public T getLast() {
 		
-		Node tmp = head;
+		Node<T> tmp = head;
 		while(tmp.getNext()!=null) {
 			
 			tmp = tmp.getNext();
@@ -91,9 +103,9 @@ public class LinkedList {
 		return tmp.getData();
 	}
 	
-	public Person removeFirst() {
+	public T removeFirst() {
 		
-		Person tmp = head.getData();
+		T tmp = head.getData();
 		head = head.getNext();
 		count--;
 		return tmp;

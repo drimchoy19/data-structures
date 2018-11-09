@@ -1,7 +1,7 @@
 
-public class Queue{
+public class Queue<T>{
 	
-	private Node head;
+	private Node<T> head;
 	private int count;
 	
 	public Queue() {
@@ -11,9 +11,9 @@ public class Queue{
 		
 	}
 	
-	public Queue (Person[] arr) {
+	public Queue (T[] arr) {
 		//!
-		Queue q = new Queue();
+		Queue<T> q = new Queue<T>();
 		for(int i=0;i<arr.length;i++) {
 			
 			q.enqeue(arr[i]);
@@ -24,16 +24,16 @@ public class Queue{
 		
 	}
 	
-	public void enqeue(Person data) {
+	public void enqeue(T data) {
 		
 		if(count==0) {
-			this.head = new Node(data);
+			this.head = new Node<T>(data);
 			count=1;
 		}else {
 			
-			Node tmp = new Node();
+			Node<T> tmp = new Node<T>();
 			tmp = head;
-			head = new Node(data);
+			head = new Node<T>(data);
 			head.setNext(tmp);
 			count++;
 			
@@ -41,18 +41,18 @@ public class Queue{
 		
 	}
 	
-	public Person deqeue() {
+	public T deqeue() {
 		
-		Node tmp = head;
+		Node<T> tmp = head;
 		if(count==1) {
 			
-			Person p = head.getData();
+			T p = head.getData();
 			head = null;
 			count--;
 			return p;
 		}
 		else if(count==2) {
-			Person p = head.getNext().getData();
+			T p = head.getNext().getData();
 			head.setNext(null);
 			count--;
 			return p;
@@ -63,7 +63,7 @@ public class Queue{
 			tmp = tmp.getNext();
 			
 		}
-		Person p = tmp.getNext().getData();
+		T p = tmp.getNext().getData();
 		tmp.setNext(null);
 		count--;
 
@@ -81,9 +81,9 @@ public class Queue{
 		
 	}
 	
-	public Person[] toArray() {
-		Person[] arr = new Person[count];
-		Node tmp = head;
+	/*public T[] toArray() {
+		T[] arr = new T[count];
+		Node<T> tmp = head;
 		for(int i=0;i<count;i++) {
 			
 			arr[i] = tmp.getData();
@@ -92,7 +92,6 @@ public class Queue{
 		}
 		
 		return arr;
-	}
-	 
+	}*/
 
 }

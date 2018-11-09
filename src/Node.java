@@ -1,8 +1,8 @@
 
-public class Node {
+public class Node <T> {
 	
-	private Person data;
-	private Node next;
+	private T data;
+	private Node<T> next;
 	
 	public Node() {
 		
@@ -11,32 +11,32 @@ public class Node {
 		
 	}
 	
-	public Node(Person data) {
+	public Node(T data) {
 		
 		this.data = data;
 		this.next = null;
 		
 	}
 	
-	public void setNext(Node next) {
+	public void setNext(Node<T> next) {
 		
 		this.next = next;
 		
 	}
 	
-	public Node getNext() {
+	public Node<T> getNext() {
 		
 		return this.next;
 		
 	}
 	
-	public Person getData() {
+	public T getData() {
 		
 		return this.data;
 		
 	}
 	
-	public void setData(Person data) {
+	public void setData(T data) {
 		
 		this.data = data;
 		

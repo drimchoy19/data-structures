@@ -1,7 +1,7 @@
 
-public class Stack {
+public class Stack<T> {
 	
-	private Node head;
+	private Node<T> head;
 	private int count;
 	
 	public Stack() {
@@ -11,9 +11,9 @@ public class Stack {
 		
 	}
 	
-	public Stack (Person[] arr) {
+	public Stack (T[] arr) {
 		//!
-		Stack s = new Stack();
+		Stack<T> s = new Stack<T>();
 		for(int i=0;i<arr.length;i++) {
 			
 			s.push(arr[i]);
@@ -24,16 +24,16 @@ public class Stack {
 		
 	}
 	
-	public void push(Person data) {
+	public void push(T data) {
 		
 		if(head==null) {
 			
-			this.head = new Node(data);
+			this.head = new Node<T>(data);
 			count = 1;
 			
 		}else {
 			
-			Node tmp = new Node(data);
+			Node<T> tmp = new Node<T>(data);
 			tmp.setNext(head);
 			head = tmp;
 			count++;
@@ -43,9 +43,9 @@ public class Stack {
 		
 	}
 	
-	public Person pop() {
+	public T pop() {
 		
-		Person tmp = null;
+		T tmp = null;
 		if(count==1) {
 			tmp = head.getData();
 			head = null;
@@ -59,7 +59,7 @@ public class Stack {
 		}
 		
 	}
-	public Person peek() {
+	public T peek() {
 		
 		return head.getData();
 		
@@ -77,10 +77,10 @@ public class Stack {
 		
 	}
 	
-	public Person[] toArray() {
+	/*public T toArray() {
 		
-		Person[] arr = new Person[this.count];
-		Node tmp = head;
+		
+		Node<T> tmp = head;
 		for(int i=0;i<count;i++) {
 			
 			arr[i] = tmp.getData();
@@ -88,6 +88,6 @@ public class Stack {
 			
 		}
 		return arr;
-	}
+	}*/
 
 }

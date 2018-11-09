@@ -6,15 +6,11 @@ public class Testing {
 		
 
 		Person tmp = new Person();
-		Person[] p = new Person[7];
-		p[0] = new Person("Gosho",22);
-		p[1] = new Person("Ivan",23);
-		p[2] = new Person("Gosho1",24);
-		p[3] = new Person("Ivan1",43);
-		p[4] = new Person("Petkan",33);
-		p[5] = new Person("Shestkan",26);
-		p[6] = new Person("Sedemkan",27);
+		Car tmpC = new Car();
+		Person[] p = tmp.initPersons();
+		Car[] cars = tmpC.initCars();
 		
+		//System.out.println(tmp.getClass());
 		System.out.println("| 1 - LinkedList | 2 - Queue | 3 - Stack |");
 		int a = 0;
 		Scanner sc = new Scanner(System.in);
@@ -27,41 +23,42 @@ public class Testing {
 			
 			System.out.println("LinkedList");
 			
-			LinkedList ll = new LinkedList();
-			
+			LinkedList<Person> ll = new LinkedList<Person>(p);
+			LinkedList<Car> ll2 = new LinkedList<Car>(cars);
 			for(int i=0;i<p.length;i++) {
 				
-				ll.add(p[i]);
-				in += p[i].getId()+"-"+p[i].getName()+" ";
+				in += p[i].toString();
+				
 			}
 			
-			System.out.println(ll.size());
 			System.out.println("IN");
 			System.out.println(in);
-			System.out.println("RemoveFirst - "+ll.removeFirst().getName());
+			System.out.println("Size:"+ll.size());
+			System.out.println("RemoveFirst - "+ll.removeFirst().toString());
 			while(ll.isEmpty()!=true) {
 				//?
 				tmp = ll.removeFirst();
-				out += tmp.getId()+"-"+tmp.getName()+" ";
+				out += tmp.toString();
 				
 			}
 			
 			System.out.println(out);
+			
 			break;
 			
 		case 2 :
 			
-			System.out.println("Queue");
+			System.out.println("Queue FIFO");
 			System.out.println("IN ORDER");
 			in = "";
 			for(int i = 0;i<p.length;) {
 				tmp = p[i];
-				in += tmp.getId()+"-"+tmp.getName()+" ";
+				in += tmp.toString()+" ";
 				i++;
 				
 			}
 			System.out.println(in);
-			Queue q = new Queue(p);
+			Queue<Person> q = new Queue<Person>(p);
 			
 			System.out.println(q.size());
 			System.out.println("OUT ORDER");
@@ -69,7 +66,7 @@ public class Testing {
 			while(q.isEmpty()!=true) {
 				
 				tmp = q.deqeue();
-				out += tmp.getId()+"-"+tmp.getName()+" ";
+				out += tmp.toString()+" | ";
 				
 			}
 			
@@ -79,10 +76,9 @@ public class Testing {
 			break;
 			
 		case 3 :
-			System.out.println("Stack");
+			System.out.println("Stack LIFO");
 			
-			Stack s = new Stack();
-			Stack st2 = new Stack(p);
+			Stack<Person> st2 = new Stack<Person>(p);
 			in = "";
 			for(int i = 0;i<p.length;) {
 				tmp = p[i];
@@ -91,9 +87,6 @@ public class Testing {
 				
 			}
 			System.out.println(in);
-			s.push(p[0]);
-			s.push(p[1]);
-			s.push(p[2]);
 			System.out.println(st2.size());
 			out = "";
 			while(st2.isEmpty()!=true) {
@@ -101,9 +94,10 @@ public class Testing {
 				tmp = st2.pop();
 				out += tmp.getId()+"-"+tmp.getName()+" ";
 				
-			}
 			
+			}
 			System.out.println(out);
+			System.out.println(st2.size());
 			break;
 			
 			default :
@@ -115,4 +109,7 @@ public class Testing {
 		
 		
 	}
+	
+	
 }
+
