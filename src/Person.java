@@ -61,8 +61,8 @@ public class Person {
 	}
 
 	public Person[] initPersons() {
-
-		Person[] p = new Person[13];
+		//21
+		Person[] p = new Person[21];
 
 		p[0] = new Person("Gosho", 22);
 		p[1] = new Person("Ivan", 23);
@@ -77,6 +77,14 @@ public class Person {
 		p[10] = new Person("Pesho Georgiev", 38);
 		p[11] = new Person("Shesti Shestov", 46);
 		p[12] = new Person("Sedemk Os", 27);
+		p[13] = new Person("Gosho", 22);
+		p[14] = new Person("Ivan", 23);
+		p[15] = new Person("Gosho1", 24);
+		p[16] = new Person("Ivan1", 43);
+		p[17] = new Person("Gosho Petkov", 28);
+		p[18] = new Person("Pesho Ivanov", 19);
+		p[19] = new Person("Sedemkan", 27);
+		p[20] = new Person("Ivan Ivanov21", 31);
 
 		return p;
 

@@ -4,7 +4,7 @@ public class Car {
 	private String brand;
 	private String model;
 	private int year;
-	private int price;
+	private double price;
 	private int power;
 	
 	public Car() {
@@ -17,7 +17,7 @@ public class Car {
 		
 	}
 	
-	public Car(String b,String m,int y,int p,int pow) {
+	public Car(String b,String m,int y,double p,int pow) {
 		
 		this.brand = b;
 		this.model = m;
@@ -28,12 +28,22 @@ public class Car {
 	}
 	
 	public Car[] initCars() {
-		
-		Car[] arr = new Car[3];
+		//13
+		Car[] arr = new Car[13];
 		
 		arr[0] = new Car("Mercedes","E CLASS",17000,2006,306);
 		arr[1] = new Car("BMW","5 SERIE",10999,2003,286);
 		arr[2] = new Car("Audi","A6",9999,2005,223);
+		arr[3] = new Car("Mercedes","S CLASS",23500,2007,388);
+		arr[4] = new Car("Mercedes","C CLASS",7000,2003,143);
+		arr[5] = new Car("BMW","3 SERIE",5000,2003,150);
+		arr[6] = new Car("Peugeot","307",4700,2001,90);
+		arr[7] = new Car("BMW","5 SERIE",10999,2003,286);
+		arr[8] = new Car("Audi","A8",17000,2005,321);
+		arr[9] = new Car("Mercedes","E CLASS",23500,2009,388);
+		arr[10] = new Car("Mercedes","C CLASS",15000,2007,170);
+		arr[11] = new Car("BMW","3 SERIE",5000,2003,150);
+		arr[12] = new Car("Peugeot","3008 GT LINE",66000,2001,177);
 		
 		return arr;
 		
@@ -71,11 +81,11 @@ public class Car {
 		this.year = year;
 	}
 
-	protected int getPrice() {
+	protected double getPrice() {
 		return price;
 	}
 
-	protected void setPrice(int price) {
+	protected void setPrice(double price) {
 		this.price = price;
 	}
 

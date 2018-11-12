@@ -23,11 +23,12 @@ public class Testing {
 			
 			System.out.println("LinkedList");
 			
-			LinkedList<Person> ll = new LinkedList<Person>(p);
+			LinkedList<Person> ll = new LinkedList<Person>();
 			LinkedList<Car> ll2 = new LinkedList<Car>(cars);
 			for(int i=0;i<p.length;i++) {
 				
-				in += p[i].toString();
+				ll.add(p[i]);
+				in += p[i].getId()+" | ";//toString()+" ";
 				
 			}
 			
@@ -36,9 +37,9 @@ public class Testing {
 			System.out.println("Size:"+ll.size());
 			System.out.println("RemoveFirst - "+ll.removeFirst().toString());
 			while(ll.isEmpty()!=true) {
-				//?
+				
 				tmp = ll.removeFirst();
-				out += tmp.toString();
+				out += tmp.getId()+" | ";//toString();
 				
 			}
 			
@@ -53,25 +54,26 @@ public class Testing {
 			in = "";
 			for(int i = 0;i<p.length;) {
 				tmp = p[i];
-				in += tmp.toString()+" ";
+				in += tmp.getId()+" | ";//toString()+" ";
 				i++;
 				
 			}
 			System.out.println(in);
 			Queue<Person> q = new Queue<Person>(p);
 			
-			System.out.println(q.size());
+			//System.out.println(q.size());
 			System.out.println("OUT ORDER");
 			 out = "";
 			while(q.isEmpty()!=true) {
 				
 				tmp = q.deqeue();
-				out += tmp.toString()+" | ";
+				out += tmp.getId()+" | ";//toString()+" | ";
+						
 				
 			}
 			
 			System.out.println(out);
-			System.out.println(q.size());
+			//System.out.println(q.size());
 			
 			break;
 			
@@ -82,22 +84,22 @@ public class Testing {
 			in = "";
 			for(int i = 0;i<p.length;) {
 				tmp = p[i];
-				in += tmp.getId()+"-"+tmp.getName()+" ";
+				in += tmp.getId()+" | ";//+tmp.getName()+" ";
 				i++;
 				
 			}
 			System.out.println(in);
-			System.out.println(st2.size());
+			//System.out.println(st2.size());
 			out = "";
 			while(st2.isEmpty()!=true) {
 
 				tmp = st2.pop();
-				out += tmp.getId()+"-"+tmp.getName()+" ";
+				out += tmp.getId()+" | ";//+tmp.getName()+" ";
 				
 			
 			}
 			System.out.println(out);
-			System.out.println(st2.size());
+			//System.out.println(st2.size());
 			break;
 			
 			default :
