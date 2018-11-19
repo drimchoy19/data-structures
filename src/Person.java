@@ -1,3 +1,9 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Person {
 
@@ -26,6 +32,12 @@ public class Person {
 
 		this.name = name;
 
+	}
+	
+	public void setId(int id) {
+		
+		this.id = id;
+		
 	}
 
 	public String getName() {
@@ -88,6 +100,73 @@ public class Person {
 
 		return p;
 
+	}
+	
+	public String writeInFile(Person[] arr) {
+		
+		//id*,name*,age*
+		//dali go ima
+		    //ako go ima chete i prezapisva
+			// ako go nqma pravi nov fail
+			//uspeshno rdy
+			//neUspechno noRdy
+		String toWrite = "";
+		for(Person p : arr) {
+			
+			toWrite += p.getId()+"*"+p.getName()+"*"+p.getAge()+"*";
+			
+		}
+		try {
+		File file = new File("Persons.txt");
+		//boolean isCreated = file.createNewFile();
+		FileWriter fs = new FileWriter(file);
+		BufferedWriter bw = new BufferedWriter(fs);
+		
+		if(file.exists()) {
+			bw.write(toWrite);
+			bw.flush();
+			bw.close();
+			System.out.println("File rdy");
+		}else {
+			System.out.println("Cant create file");
+		}
+		return toWrite;
+		}catch(IOException e) {
+			System.out.println("Error with file!");
+			e.printStackTrace();
+			return "EMPTY";
+			
+		}
+	}
+	
+	public Person[] readFromFile(){
+		
+		try {
+		File file = new File("Persons.txt");
+		FileReader fr = new FileReader(file);
+		BufferedReader br = new BufferedReader(fr);
+		
+		String in = br.readLine();
+		String[] strArr = in.split("\\*");
+		
+		Person[] personArr = new Person[strArr.length/3];
+		
+		int j = 0;
+		for(int i=0;i<strArr.length;i+=3,j++) {
+			
+			personArr[j] = new Person(strArr[i+1],Integer.valueOf(strArr[i+2]));
+			personArr[j].setId(Integer.valueOf(strArr[i]));
+			
+		}
+
+		System.out.println("File read : Completed!");
+		br.close();
+		return personArr;
+		}catch(IOException e) {
+			System.out.println("Error with file opening!");
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }

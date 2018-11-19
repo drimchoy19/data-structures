@@ -1,12 +1,14 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Testing {
 
-	public static void main(String [] args) {
+	public static void main(String [] args){
 		
 
 		Person tmp = new Person();
-		Person[] p = tmp.initPersons();
+		Person[] p = tmp.readFromFile();//tmp.initPersons();
+		//tmp.writeInFile(p);
 		//Car tmpC = new Car();
 		//Car[] cars = tmpC.initCars();
 		
