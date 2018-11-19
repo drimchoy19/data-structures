@@ -3,7 +3,6 @@ public class LinkedList<T> {
 
 	private int count;
 	private Node<T> head;
-
 	
 	public LinkedList() {
 
@@ -184,11 +183,8 @@ public class LinkedList<T> {
 		return head == null ? true : false;
 	}
 	
-	/*public T[] toArray(T[] arr) {
-		if(arr.length<this.size()) {
-			arr = new T[10];
-			
-		}
-		return arr;
-	}*/
+	/*public void toArray() {
+		Class<? extends Object> p = this.head.getData().getClass();
+		//return null;
+		}*/
 }

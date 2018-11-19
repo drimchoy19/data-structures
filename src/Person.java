@@ -104,12 +104,6 @@ public class Person {
 	
 	public String writeInFile(Person[] arr) {
 		
-		//id*,name*,age*
-		//dali go ima
-		    //ako go ima chete i prezapisva
-			// ako go nqma pravi nov fail
-			//uspeshno rdy
-			//neUspechno noRdy
 		String toWrite = "";
 		for(Person p : arr) {
 			
@@ -118,7 +112,6 @@ public class Person {
 		}
 		try {
 		File file = new File("Persons.txt");
-		//boolean isCreated = file.createNewFile();
 		FileWriter fs = new FileWriter(file);
 		BufferedWriter bw = new BufferedWriter(fs);
 		

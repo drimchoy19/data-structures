@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Testing {
@@ -22,11 +21,11 @@ public class Testing {
 		
 		case 1 :
 			
-			LinkedList<Person> ll = new LinkedList<Person>();
+			LinkedList<Person> ll = new LinkedList<Person>(p);// new LinkedList<Person>();
 			
 			for(int i=0;i<p.length;i++) {
 				
-				ll.add(p[i]);
+				//ll.add(p[i]);
 				in += p[i].getId()+" | ";//toString()+" ";
 				
 			}
@@ -40,23 +39,21 @@ public class Testing {
 			System.out.println(ll.remove(7).toString());
 			System.out.println(ll.remove(11).toString());
 			System.out.println(ll.remove(15).toString());
-			System.out.println("Size after remove-"+ll.size());
+
+			System.out.println("RemoveFirst - "+ll.removeFirst());
+			System.out.println("RemoveLast - "+ll.removeLast());
 			
+			System.out.println("Size after remove-"+ll.size());
+			System.out.println("Data after removes");
 			ll.show();
 			
-			System.out.println("RemoveLast - "+ll.removeLast());
-			System.out.println("RemoveFirst - "+ll.removeFirst().toString());
-			System.out.println("Size:"+ll.size());
-			
-			//ll.show();
-
-			System.out.println("IN id's");
-			System.out.println(in);
+			System.out.println("Remove all from back to front");
 			while(ll.isEmpty()!=true) {
 				
 				ll.removeFirst();
 				
 			}
+			System.out.println(ll.size());
 			System.out.println("isEmpty-"+ll.isEmpty());
 			
 			break;
@@ -64,44 +61,49 @@ public class Testing {
 		case 2 :
 			
 			System.out.println("Queue FIFO(First In First Out)");
-			System.out.println("IN ORDER id's");
+			Queue<Person> q = new Queue<Person>();
+			
 			in = "";
 			for(int i = 0;i<p.length;) {
-				tmp = p[i];
-				in += tmp.getId()+" | ";//toString()+" ";
+				
+				q.enqeue(p[i]);
+				in += p[i].getId()+" | ";//toString()+" ";
 				i++;
 				
 			}
+			System.out.println("Queue size :"+q.size());
+			System.out.println("IN ORDER id's");
 			System.out.println(in);
-			Queue<Person> q = new Queue<Person>(p);
+			//Queue<Person> q = new Queue<Person>(p);
 			
-			System.out.println("OUT ORDER id's");
 			 out = "";
 			while(q.isEmpty()!=true) {
 				
 				tmp = q.deqeue();
 				out += tmp.getId()+" | ";//toString()+" | ";
-						
-				
+					
 			}
-			
+			System.out.println("OUT ORDER id's");
 			System.out.println(out);
+
+			System.out.println("Queue size :"+q.size());
 			
 			break;
 			
 		case 3 :
-			System.out.println("Stack LIFO(Last In First Out");
 			
-			Stack<Person> st2 = new Stack<Person>(p);
+			System.out.println("Stack LIFO(Last In First Out");
+			Stack<Person> st2 = new Stack<Person>();
 			in = "";
-			System.out.println("IN ORDER id's");
 			for(int i = 0;i<p.length;) {
-				tmp = p[i];
-				in += tmp.getId()+" | ";
+				
+				st2.push(p[i]);
+				in += p[i].getId()+" | ";
 				i++;
 				
 			}
-			
+			System.out.println("Stack size :"+st2.size());
+			System.out.println("IN ORDER id's");
 			System.out.println(in);
 			out = "";
 			while(st2.isEmpty()!=true) {
@@ -113,6 +115,9 @@ public class Testing {
 			}
 			System.out.println("OUT ORDER id's");
 			System.out.println(out);
+			
+
+			System.out.println("Stack size :"+st2.size());
 			
 			break;
 			
